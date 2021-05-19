@@ -1,33 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package reactivo;
 
-/**
- *
- * @author Personal
- */
 public class trabajosTl {
     
-    String nombre = " ";
-    String descripcion = " ";
-    String habilidades = " ";
-    int experiencia = 0;
-    String nivel = " ";
-    int salario = 0;
+    private String nombre;
+    private String descripcion;
+    private String habilidades;
+    private int experiencia;
+    private String nivel;
     
     public trabajosTl() {
     }
 
-    public trabajosTl(String nombre, String descipcion, String habilidades, int experiencia, String nivel, int salario) {
+    public trabajosTl(String nombre, String descripcion, String habilidades, int experiencia, String nivel) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.habilidades = habilidades;
         this.experiencia = experiencia;
         this.nivel = nivel;
-        this.salario = salario;
     }
     
     public String getNombre() {
@@ -70,16 +59,11 @@ public class trabajosTl {
         this.nivel = nivel;
     }
 
-    public int getSalario() {
-        return salario;
-    }
-
-    public void setSalario(int salario) {
-        this.salario = salario;
-    }
-    
-    int sueldo() {
+    /* NOTA: Al tratarse de un método int, la operación experiencia / 10 siempre dará como resultado un valor entero.
+    Dicho esto, es importante saber que al añadir valores menores a 10, el resultado de la división será 0. */
+    public int sueldo() {
         
+        int salario = 0;
         switch  (nivel) {
             case "Jr":
                 salario = 1000 * (1 + (experiencia / 10));
@@ -100,7 +84,7 @@ public class trabajosTl {
 
     @Override
     public String toString() {
-        return "trabajosTl{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", habilidades=" + habilidades + ", experiencia=" + experiencia + ", nivel=" + nivel + ", salario=" + salario + '}';
+        return "trabajosTl{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", habilidades=" + habilidades + ", experiencia=" + experiencia + ", nivel=" + nivel + '}';
     }
      
 }
